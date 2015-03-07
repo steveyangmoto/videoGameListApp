@@ -1,22 +1,25 @@
 package com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.models;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by SteveYang on 3/6/15.
  */
 public class GameListModel {
     private int thumbnailResourceId;
-
     private float rating;
     private String gameTitle;
     private String console;
     private boolean finished;
 
 
-    public GameListModel(int imageId, String title, String console, boolean finished) {
+    public GameListModel(int imageId, String title, String console, float rating,boolean finished) {
         this.thumbnailResourceId = imageId;
         this.gameTitle = title;
         this.console = console;
         this.finished = finished;
+        this.rating = rating;
     }
 
     public boolean isFinished() {
@@ -58,5 +61,6 @@ public class GameListModel {
     public void setRating(float rating) {
         this.rating = rating;
     }
+
 
 }

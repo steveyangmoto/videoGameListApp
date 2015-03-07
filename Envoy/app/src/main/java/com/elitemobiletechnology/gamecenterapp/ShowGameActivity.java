@@ -11,10 +11,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+
+import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.utils.Constants;
 
 /**
  * Created by SteveYang on 3/6/15.

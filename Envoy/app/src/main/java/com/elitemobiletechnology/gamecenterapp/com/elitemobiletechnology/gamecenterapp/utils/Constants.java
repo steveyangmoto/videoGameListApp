@@ -1,4 +1,4 @@
-package com.elitemobiletechnology.gamecenterapp;
+package com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.utils;
 
 /**
  * Created by SteveYang on 3/6/15.
