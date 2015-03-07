@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GameCenterApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_show_game">List of my games</string>
+    <string name="title_activity_rate_games">Rate Games</string>
+</resources>
