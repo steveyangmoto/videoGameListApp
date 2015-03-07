@@ -32,11 +32,13 @@ public class ShowGameActivity extends ActionBarActivity {
         actionBar.setBackgroundDrawable(new ColorDrawable(R.color.white));
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.back_button);
-        addGameListFragment();
+        fragmentManager = getFragmentManager();
+        if(savedInstanceState==null) {
+            addGameListFragment();
+        }
     }
 
     private void addGameListFragment() {
-        fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         listFragment = new ListFragment();
         Bundle bundle = new Bundle();
@@ -49,7 +51,6 @@ public class ShowGameActivity extends ActionBarActivity {
 
     private void addFormFragment() {
         FormFragment formFragment = new FormFragment();
-        fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(android.R.id.content, formFragment);
         fragmentTransaction.addToBackStack(null);
@@ -69,9 +70,7 @@ public class ShowGameActivity extends ActionBarActivity {
                 }
                 break;
             case R.id.buttonAdd:
-                if (fragmentManager != null) {
                     addFormFragment();
-                }
                 break;
         }
         return (super.onOptionsItemSelected(menuItem));
