@@ -24,15 +24,16 @@ public class RateGamesActivity extends ActionBarActivity {
         actionBar.setBackgroundDrawable(new ColorDrawable(R.color.white));
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.back_button);
-            FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
+        if (savedInstanceState == null) {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
             ListFragment fragment = new ListFragment();
             Bundle bundle = new Bundle();
             bundle.putBoolean(Constants.IS_GAME_RATING, true);
             fragment.setArguments(bundle);
             fragmentTransaction.add(android.R.id.content, fragment);
             fragmentTransaction.commit();
+        }
     }
 
     @Override

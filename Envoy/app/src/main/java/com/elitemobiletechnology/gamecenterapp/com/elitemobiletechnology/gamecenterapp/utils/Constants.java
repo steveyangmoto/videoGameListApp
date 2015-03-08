@@ -5,4 +5,7 @@ package com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamece
  */
 public class Constants {
     public static final String IS_GAME_RATING = "is_game_rating";
+    public static final String GAME_LIST_STORAGE_KEY = "myGameList";
+    public static final int ADD_GAME_REQUEST = 1;
+
 }
