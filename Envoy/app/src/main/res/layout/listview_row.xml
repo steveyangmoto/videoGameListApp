@@ -26,7 +26,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Call of Duty"
             android:textSize="30sp"
             android:paddingBottom="7dp"
             android:id="@+id/tvGameTitle" />
@@ -35,7 +34,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="PS3"
             android:textColor="@color/green"
             android:id="@+id/tvConsole" />
     </LinearLayout>
