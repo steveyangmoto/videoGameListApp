@@ -1,21 +1,26 @@
 package com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.models;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
  * Created by SteveYang on 3/6/15.
  */
-public class GameListModel {
+public class VideoGameModel {
     private int thumbnailResourceId;
     private float rating;
     private String gameTitle;
     private String console;
+    private String fileName;
     private boolean finished;
 
-
-    public GameListModel(int imageId, String title, String console, float rating,boolean finished) {
+    public VideoGameModel(int imageId, String title, String console, boolean finished, float rating) {
         this.thumbnailResourceId = imageId;
+        this.gameTitle = title;
+        this.console = console;
+        this.finished = finished;
+        this.rating = rating;
+    }
+
+    public VideoGameModel(String filename, String title, String console, boolean finished, float rating) {
+        this.fileName = filename;
         this.gameTitle = title;
         this.console = console;
         this.finished = finished;
@@ -62,5 +67,11 @@ public class GameListModel {
         this.rating = rating;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
 
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 }

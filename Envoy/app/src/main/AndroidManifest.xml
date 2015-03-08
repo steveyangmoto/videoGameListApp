@@ -4,13 +4,12 @@
 
     <uses-sdk android:minSdkVersion="19" />
 
-    <android:uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" android:required="true"/>
     <application
@@ -34,6 +33,10 @@
         <activity
             android:name=".RateGamesActivity"
             android:label="@string/title_activity_rate_games" >
+        </activity>
+        <activity
+            android:name=".FormActivity"
+            android:label="@string/title_activity_form" >
         </activity>
     </application>
 

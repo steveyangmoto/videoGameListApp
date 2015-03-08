@@ -1,8 +1,11 @@
 package com.elitemobiletechnology.gamecenterapp;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -49,28 +52,15 @@ public class ShowGameActivity extends ActionBarActivity {
         fragmentTransaction.commit();
     }
 
-    private void addFormFragment() {
-        FormFragment formFragment = new FormFragment();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(android.R.id.content, formFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case android.R.id.home:
-                Log.d(TAG, "currently there are " + fragmentManager.getBackStackEntryCount());
-
-                if (fragmentManager.getBackStackEntryCount() > 1) {
-                    fragmentManager.popBackStack();
-                } else {
                     super.onBackPressed();
-                }
                 break;
             case R.id.buttonAdd:
-                    addFormFragment();
+                Intent intent = new Intent(this,FormActivity.class);
+                    startActivityForResult(intent,Constants.ADD_GAME_REQUEST);
                 break;
         }
         return (super.onOptionsItemSelected(menuItem));
@@ -82,5 +72,11 @@ public class ShowGameActivity extends ActionBarActivity {
         inflater.inflate(R.menu.menu_show_game, menu);
         return true;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        listFragment.onActivityResult(requestCode,resultCode,data);
+    }
+
 }
 

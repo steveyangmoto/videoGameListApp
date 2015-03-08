@@ -8,28 +8,32 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.models.GameListModel;
+import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.models.VideoGameModel;
+import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.utils.ApplicationUtil;
 
 public class ListAdapter extends BaseAdapter {
     private static final String TAG = "ListAdapter";
     private Activity activity;
-    private ArrayList<GameListModel> gameList;
+    private ArrayList<VideoGameModel> gameList;
     private LayoutInflater inflater;
     private boolean rateGames;
 
-    public ListAdapter(Activity a, ArrayList<GameListModel> gameList, Boolean isRating) {
+    public ListAdapter(Activity a, ArrayList<VideoGameModel> gameList, Boolean isRating) {
         activity = a;
         this.gameList = gameList;
         rateGames = isRating;
@@ -50,7 +54,7 @@ public class ListAdapter extends BaseAdapter {
     }
 
     public View getView(final int position, View convertView, ViewGroup parent) {
-        final GameListModel aGame = gameList.get(position);
+        final VideoGameModel aGame = gameList.get(position);
         View vi = convertView;
         ViewHolder holder = null;
         if (vi == null) {
@@ -88,7 +92,18 @@ public class ListAdapter extends BaseAdapter {
         }
         holder.gameTitle.setText(aGame.getGameTitle());
         holder.consoleName.setText(aGame.getConsole());
-        holder.thumbnail.setImageResource(aGame.getThumbnailResourceId());
+        if(aGame.getThumbnailResourceId()!=0) {
+            holder.thumbnail.setImageResource(aGame.getThumbnailResourceId());
+        }else{
+            Drawable d = Drawable.createFromPath(ApplicationUtil.getAbsoluteFilePath(aGame.getFileName()));
+            Bitmap b = ((BitmapDrawable)d).getBitmap();
+//            Matrix m = new Matrix();
+//            m.setRectToRect(new RectF(0, 0, b.getWidth(), b.getHeight()), new RectF(0, 0, 115, 115), Matrix.ScaleToFit.CENTER);
+//            b= Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), m, true);            holder.thumbnail.setImageBitmap(b);
+//            b = Bitmap.createScaledBitmap(b,115,115,false);
+            holder.thumbnail.setImageBitmap(b);
+            Log.d(TAG, "width:" + b.getWidth());
+        }
         return vi;
     }
 
