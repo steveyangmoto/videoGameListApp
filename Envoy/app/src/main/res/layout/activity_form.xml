@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Game title:"
+            android:text="@string/game_title"
             android:id="@+id/tvGameTitle"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/etGameTitle"
-            android:hint="e.g. Call of duty"
+            android:hint="@string/game_title_hint"
             android:layout_toRightOf="@+id/tvGameTitle"
             android:layout_alignBottom="@+id/tvGameTitle" />
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Game Console:"
+            android:text="@string/game_console_type"
             android:id="@+id/tvGameConsoleType"
             android:layout_below="@+id/tvGameTitle"
             android:layout_alignParentLeft="true"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/etGameConsoleType"
-            android:hint="e.g. Xbox 360"
+            android:hint="@string/game_console_type_hint"
             android:layout_toRightOf="@+id/tvGameConsoleType"
             android:layout_alignBottom="@+id/tvGameConsoleType" />
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvGameConsoleType"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Upload game image:"
+            android:text="@string/image"
             android:id="@+id/tvUploadImage"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="50dp" />
@@ -61,7 +61,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upload"
+            android:text="@string/take_photo"
             android:id="@+id/btUpload"
             android:layout_alignParentRight="true"
             android:layout_alignBottom="@id/tvUploadImage" />
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ivVideoGame"
-            android:contentDescription="Image of your video game"
+            android:contentDescription="@string/game_thumbnail_content_description"
             android:layout_below="@+id/tvUploadImage"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp" />
@@ -78,11 +78,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit"
+            android:text="@string/submit_button_text"
             android:id="@+id/btSubmit"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/ivVideoGame" />
-
-
     </RelativeLayout>
 </ScrollView>

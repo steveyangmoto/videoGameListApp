@@ -6,4 +6,16 @@
     <string name="title_activity_show_game">List of my games</string>
     <string name="title_activity_rate_games">Rate Games</string>
     <string name="title_activity_form">Add a new game</string>
+    <!--activity_form -->
+    <string name="game_title">Game title:</string>
+    <string name="game_title_hint">e.g. Call of duty</string>
+    <string name="game_console_type">Game Console:</string>
+    <string name="game_console_type_hint">e.g. Xbox 360</string>
+    <string name="image">Image:</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="game_thumbnail_content_description">Image of your video game</string>
+    <string name="submit_button_text">Submit</string>
+    <!--activity_main-->
+    <string name="show_my_games">Show my games</string>
+    <string name="rate_my_games">Rate my games</string>
 </resources>

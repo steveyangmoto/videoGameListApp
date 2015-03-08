@@ -15,14 +15,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.models.VideoGameModel;
 import android.widget.Toast;
 import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.utils.ApplicationUtil;
 import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.utils.Constants;
+import com.elitemobiletechnology.gamecenterapp.com.elitemobiletechnology.gamecenterapp.utils.Settings;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -66,7 +65,6 @@ public class FormActivity extends ActionBarActivity {
                 startActivityForResult(intent, TAKE_PICTURE);
             }
         });
-
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,13 +104,11 @@ public class FormActivity extends ActionBarActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == TAKE_PICTURE&&resultCode== Activity.RESULT_OK) {
             Bitmap bp = (Bitmap) data.getExtras()
                     .get("data");
-            bp = Bitmap.createScaledBitmap(bp, 233, 233, false);
-            Log.d(TAG,"width:"+bp.getWidth()+"height:"+bp.getHeight());
+            bp = Bitmap.createScaledBitmap(bp, Settings.IMAGE_SIDE_LENGTH, Settings.IMAGE_SIDE_LENGTH, false);
             gamePicture.setImageBitmap(bp);
             uploadedBitmap = bp;
         }

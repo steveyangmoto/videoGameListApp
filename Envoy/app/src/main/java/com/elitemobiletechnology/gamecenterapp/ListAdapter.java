@@ -97,12 +97,7 @@ public class ListAdapter extends BaseAdapter {
         }else{
             Drawable d = Drawable.createFromPath(ApplicationUtil.getAbsoluteFilePath(aGame.getFileName()));
             Bitmap b = ((BitmapDrawable)d).getBitmap();
-//            Matrix m = new Matrix();
-//            m.setRectToRect(new RectF(0, 0, b.getWidth(), b.getHeight()), new RectF(0, 0, 115, 115), Matrix.ScaleToFit.CENTER);
-//            b= Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight(), m, true);            holder.thumbnail.setImageBitmap(b);
-//            b = Bitmap.createScaledBitmap(b,115,115,false);
             holder.thumbnail.setImageBitmap(b);
-            Log.d(TAG, "width:" + b.getWidth());
         }
         return vi;
     }

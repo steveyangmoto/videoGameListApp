@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Show my games"
+        android:text="@string/show_my_games"
         android:textColor="@color/black"
         android:background="@color/lime"
         android:id="@+id/btShowGames"
@@ -23,7 +23,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rate my games"
+        android:text="@string/rate_my_games"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:textColor="@color/black"
