@@ -91,7 +91,7 @@ public class FormActivity extends ActionBarActivity {
             Type listType = new TypeToken<ArrayList<VideoGameModel>>() {
             }.getType();
             ArrayList<VideoGameModel> games = gson.fromJson(jsonStr, listType);
-            games.add(game);
+            games.add(0,game);
             String json = new Gson().toJson(games, listType);
             ApplicationUtil.saveToSharedPrefs(this, Constants.GAME_LIST_STORAGE_KEY, json);
             setResult(RESULT_OK, new Intent());
